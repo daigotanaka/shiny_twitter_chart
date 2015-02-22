@@ -57,8 +57,9 @@ shinyServer(function(input, output) {
     output$tweetTable <- renderDataTable({
         data <- getData()
         month <- input$month
+        lang <- tolower(substr(input$languages, 1, 2))
         # Display date, text, impressions, and engagements
-        display <- data[data$date$mon == month - 1, c(45, 3, 9, 10)]
+        display <- data[data$date$mon == month - 1 & data$lang %in% lang, c(45, 3, 9, 10)]
         display <- display[order(-display$impressions),]
         data.frame(date=display$date,
                    text=display$text,
