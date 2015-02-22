@@ -36,7 +36,7 @@ shinyUI(fluidPage(
             p("This application loads data from Amazon S3 storage. S3 storage should be",
               "very reliable, but if you encouter a problem of the right side panel not rendering",
               "please consider trying later."),
-            p("The source code is available at https://github.com/daigotanaka/data-products-course-project")
+            p("The source code is available at https://github.com/daigotanaka/shiny_twitter_chart")
         ),
     
         mainPanel(
